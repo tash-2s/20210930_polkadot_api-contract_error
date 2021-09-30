@@ -1,0 +1,3 @@
+/target/ink/*
+!/target/ink/recursive.*
+!/target/ink/metadata.json

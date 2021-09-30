@@ -1,7 +1,7 @@
 {
   "metadataVersion": "0.1.0",
   "source": {
-    "hash": "0x9e98026568bfb3f8a6ebf960c1f993f7ebb0e12940c89231f46abd00f0a48021",
+    "hash": "0xdb5366415b71e5d52af252f2be5f955f1272b7f1ec0ce3493b7a9404b3b9119c",
     "language": "ink! 3.0.0-rc5",
     "compiler": "rustc 1.57.0-nightly"
   },
@@ -15,36 +15,12 @@
   "spec": {
     "constructors": [
       {
-        "args": [
-          {
-            "name": "init_value",
-            "type": {
-              "displayName": [
-                "bool"
-              ],
-              "type": 1
-            }
-          }
-        ],
-        "docs": [
-          "Constructor that initializes the `bool` value to the given `init_value`."
-        ],
+        "args": [],
+        "docs": [],
         "name": [
           "new"
         ],
         "selector": "0x9bae9d5e"
-      },
-      {
-        "args": [],
-        "docs": [
-          "Constructor that initializes the `bool` value to `false`.",
-          "",
-          "Constructors can delegate to other constructors."
-        ],
-        "name": [
-          "default"
-        ],
-        "selector": "0xed4b9d1b"
       }
     ],
     "docs": [],
@@ -52,24 +28,7 @@
     "messages": [
       {
         "args": [],
-        "docs": [
-          " A message that can be called on instantiated contracts.",
-          " This one flips the value of the stored `bool` from `true`",
-          " to `false` and vice versa."
-        ],
-        "mutates": true,
-        "name": [
-          "flip"
-        ],
-        "payable": false,
-        "returnType": null,
-        "selector": "0x633aa551"
-      },
-      {
-        "args": [],
-        "docs": [
-          " Simply returns the current value of our `bool`."
-        ],
+        "docs": [],
         "mutates": false,
         "name": [
           "get"
@@ -77,11 +36,32 @@
         "payable": false,
         "returnType": {
           "displayName": [
-            "bool"
+            "MyEnum"
           ],
           "type": 1
         },
         "selector": "0x2f865bd9"
+      },
+      {
+        "args": [
+          {
+            "name": "new",
+            "type": {
+              "displayName": [
+                "MyEnum"
+              ],
+              "type": 1
+            }
+          }
+        ],
+        "docs": [],
+        "mutates": true,
+        "name": [
+          "set"
+        ],
+        "payable": false,
+        "returnType": null,
+        "selector": "0xe8c45eb6"
       }
     ]
   },
@@ -103,8 +83,27 @@
   "types": [
     {
       "def": {
-        "primitive": "bool"
-      }
+        "variant": {
+          "variants": [
+            {
+              "name": "A"
+            },
+            {
+              "fields": [
+                {
+                  "type": 1,
+                  "typeName": "ink_prelude::boxed::Box<MyEnum>"
+                }
+              ],
+              "name": "B"
+            }
+          ]
+        }
+      },
+      "path": [
+        "recursive",
+        "MyEnum"
+      ]
     }
   ]
 }
